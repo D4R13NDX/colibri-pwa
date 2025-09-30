@@ -1,0 +1,17 @@
+{
+  "name": "Plataforma Colibrí",
+  "short_name": "Colibrí",
+  "description": "Servicio de taxi rápido y seguro en Arroyo Seco.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A90E2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
