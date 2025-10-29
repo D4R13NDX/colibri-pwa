@@ -1,0 +1,24 @@
+name: K6 Load Test Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+        with:
+          version: v0.48.0
+
+      - name: Run K6 tests in Grafana Cloud
+        env:
+          K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
+        run: |
+          k6 run --out cloud loadtest.js
