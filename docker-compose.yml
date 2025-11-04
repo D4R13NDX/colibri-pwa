@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   app:
-    image: ghcr.io/D4R13NDX/colibri-pwa:latest
+    image: ghcr.io/d4r13ndx/colibri-pwa:latest
     container_name: mi_app_test
     ports:
       - "80:3000"
