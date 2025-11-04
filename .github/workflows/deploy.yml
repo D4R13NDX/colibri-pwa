@@ -27,6 +27,8 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
+          docker login ghcr.io -u ${{ secrets.REGISTRY_USER }} -p ${{ secrets.REGISTRY_TOKEN }}
           cd /home/${{ secrets.SSH_USER }}/app
           docker-compose pull
           docker-compose up -d
+
